@@ -1,11 +1,4 @@
-﻿  pch.cpp
-  Board.cpp
-  Node.cpp
-d:\dsa2\slidingpuzzle\node.cpp(24): warning C4018: '<': signed/unsigned mismatch
-d:\dsa2\slidingpuzzle\node.cpp(45): warning C4018: '<': signed/unsigned mismatch
-d:\dsa2\slidingpuzzle\node.cpp(53): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-  Sliding Puzzle.cpp
-d:\dsa2\slidingpuzzle\sliding puzzle.cpp(28): warning C4018: '<': signed/unsigned mismatch
-d:\dsa2\slidingpuzzle\sliding puzzle.cpp(32): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Sliding Puzzle.vcxproj -> D:\DSA2\SlidingPuzzle\Debug\Sliding Puzzle.exe
+﻿  Sliding Puzzle.cpp
+c:\users\alexander\desktop\309\sliding puzzle final\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexander\desktop\309\sliding puzzle final\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(33): warning C4018: '<': signed/unsigned mismatch
+  Sliding Puzzle.vcxproj -> C:\Users\Alexander\Desktop\309\Sliding Puzzle Final\SlidingPuzzle\SlidingPuzzle\Debug\Sliding Puzzle.exe

@@ -4,6 +4,7 @@
 #include <tuple>
 #include "Board.h"
 #include <time.h>
+#include <queue>
 
 using namespace std;
 
@@ -19,6 +20,10 @@ public:
 	Node(Board brd, Board gBrd);
 	~Node();
 	vector<int> hillClimb();
+	vector<int> solveA();
+	vector<Node> visit(Board brd);
 	void shuffleBoard(int amount);
+	friend bool operator< (Node a, Node b);
+	friend bool operator== (Node a, Node b);
 };
 

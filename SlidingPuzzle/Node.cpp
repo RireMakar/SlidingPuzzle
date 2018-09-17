@@ -48,6 +48,41 @@ vector<int> Node::hillClimb() // hill climbing algorithm
 	return path;									// ...and finally, returns the path.
 }
 
+vector<int> Node::solveA()
+{
+	priority_queue<Node> states;
+	Node initial(board, goalBoard);
+	states.push(initial);
+	while (states.size() > 0) {
+		Node state = states.top();
+		state.board.displayBoard();
+		states.pop();
+		if (state.board.getManhattan(goalBoard.getBoard()) == 0) {
+			return path;
+		}
+		vector<Node> children = state.visit(state.board);
+		for (int i = 0; i < children.size(); i++) {
+			Node child = children[i];
+			states.push(child);
+		}
+	}
+}
+
+vector<Node> Node::visit(Board brd)
+{
+	vector<Node> children;
+	vector<int> validMoves = brd.getValidMoves();
+	for (int i = 0; i < validMoves.size(); i++) {
+		Node newInstance(brd, goalBoard);
+		newInstance.board.makeMove(validMoves[i]);
+		newInstance.path.push_back(validMoves[i]);
+		children.push_back(newInstance);
+	}
+
+	return children;
+}
+
+
 void Node::shuffleBoard(int amount) // gets all available moves and selects one at random, repeating as many times as specified
 {
 	int seed = time(NULL);
@@ -58,4 +93,14 @@ void Node::shuffleBoard(int amount) // gets all available moves and selects one 
 		board.makeMove(validMoves[dir]);
 		seed++;
 	}
+}
+
+bool operator<(Node a, Node b)
+{
+	return a.board.getManhattan(a.goalBoard.getBoard()) + a.path.size()  > b.board.getManhattan(b.goalBoard.getBoard()) + b.path.size();
+}
+
+bool operator==(Node a, Node b)
+{
+	return a.board.getManhattan(a.goalBoard.getBoard()) == b.board.getManhattan(b.goalBoard.getBoard());
 }
