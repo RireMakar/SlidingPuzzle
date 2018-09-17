@@ -131,3 +131,14 @@ vector<int> Board::getValidMoves() // returns a vector<int> of the valid directi
 	
 	return validMoves;
 }
+
+bool operator==(Board a, Board b)
+{
+	bool isMatch = true;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (a.getBoard()[i][j] != b.getBoard()[i][j]) isMatch = false;
+		}
+	}
+	return isMatch;
+}

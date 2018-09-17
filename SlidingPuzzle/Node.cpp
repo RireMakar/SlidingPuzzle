@@ -51,11 +51,13 @@ vector<int> Node::hillClimb() // hill climbing algorithm
 vector<int> Node::solveA()
 {
 	priority_queue<Node> states;
+	vector<Node> visitedStates;
 	Node initial(board, goalBoard);
 	states.push(initial);
 	while (states.size() > 0) {
 		Node state = states.top();
 		state.board.displayBoard();
+		visitedStates.push_back(states.top());
 		states.pop();
 		if (state.board.getManhattan(goalBoard.getBoard()) == 0) {
 			return path;
@@ -63,7 +65,14 @@ vector<int> Node::solveA()
 		vector<Node> children = state.visit(state.board);
 		for (int i = 0; i < children.size(); i++) {
 			Node child = children[i];
-			states.push(child);
+			bool childVisited = false;
+			for (int i = 0; i < visitedStates.size(); i++) {
+				if (visitedStates[i].board == child.board) {
+					childVisited = true;
+					break;
+				}
+			}
+			if (!childVisited) states.push(child);
 		}
 	}
 }

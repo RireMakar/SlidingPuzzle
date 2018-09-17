@@ -23,5 +23,6 @@ public:
 	tuple<int, int> getSpace();
 	void displayBoard();
 	vector<int> getValidMoves();
+	friend bool operator== (Board a, Board b);
 };
 
