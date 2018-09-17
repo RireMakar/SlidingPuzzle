@@ -48,22 +48,22 @@ vector<int> Node::hillClimb() // hill climbing algorithm
 	return path;									// ...and finally, returns the path.
 }
 
-vector<int> Node::solveA()
+vector<int> Node::solveA() // solves via A*. I know how this works... mostly. 
 {
-	priority_queue<Node> states;
-	vector<Node> visitedStates;
-	Node initial(board, goalBoard);
-	states.push(initial);
-	while (states.size() > 0) {
-		Node state = states.top();
+	priority_queue<Node> states;									// contains all the states to be looped through
+	vector<Node> visitedStates;										// contains the visited states so that it doesn't get stuck looping through the same moves
+	Node initial(board, goalBoard);									// creates the initial node.
+	states.push(initial);											// puts the initial node into states.
+	while (states.size() > 0) {										// while there are states in the queue, loop.
+		Node state = states.top();									// get the top state
 		state.board.displayBoard();
-		visitedStates.push_back(states.top());
-		states.pop();
-		if (state.board.getManhattan(goalBoard.getBoard()) == 0) {
+		visitedStates.push_back(states.top());						// add top state to visited
+		states.pop();												// remove top state from priority queue
+		if (state.board.getManhattan(goalBoard.getBoard()) == 0) {	// if the manhattan is 0, return solved
 			return path;
 		}
-		vector<Node> children = state.visit(state.board);
-		for (int i = 0; i < children.size(); i++) {
+		vector<Node> children = state.visit(state.board);			// get a list of all children
+		for (int i = 0; i < children.size(); i++) {					// test if children visited. if not, add them to the priority queue
 			Node child = children[i];
 			bool childVisited = false;
 			for (int i = 0; i < visitedStates.size(); i++) {
@@ -77,7 +77,7 @@ vector<int> Node::solveA()
 	}
 }
 
-vector<Node> Node::visit(Board brd)
+vector<Node> Node::visit(Board brd)						// return list of possible commits
 {
 	vector<Node> children;
 	vector<int> validMoves = brd.getValidMoves();

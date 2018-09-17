@@ -1,4 +1,4 @@
 ﻿  Sliding Puzzle.cpp
-z:\igmprofile\desktop\309\sliding puzzle\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(29): warning C4018: '<': signed/unsigned mismatch
-z:\igmprofile\desktop\309\sliding puzzle\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(33): warning C4018: '<': signed/unsigned mismatch
-  Sliding Puzzle.vcxproj -> Z:\IGMProfile\Desktop\309\Sliding Puzzle\SlidingPuzzle\SlidingPuzzle\Debug\Sliding Puzzle.exe
+c:\users\alexander\desktop\309\sliding puzzle final\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(51): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexander\desktop\309\sliding puzzle final\slidingpuzzle\slidingpuzzle\sliding puzzle.cpp(55): warning C4018: '<': signed/unsigned mismatch
+  Sliding Puzzle.vcxproj -> C:\Users\Alexander\Desktop\309\Sliding Puzzle Final\SlidingPuzzle\SlidingPuzzle\Debug\Sliding Puzzle.exe
